@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const circumference = 240;
 
-    /* Set today's date */
+    /* Set today's date at the top */
     document.getElementById("today-date").textContent =
         new Date().toLocaleDateString(undefined, {
             weekday: "long",
@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
             day: "numeric"
         });
 
+    /* Update progress circle + percentage */
     function updateProgress() {
         let total = tasks.length;
         let done = 0;
@@ -32,11 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
         ring.style.strokeDashoffset = offset;
     }
 
+    /* Add click logic to each task */
     tasks.forEach(task => {
         const completeBtn = task.querySelector(".complete-btn");
         const naBtn = task.querySelector(".na-btn");
         const timestamp = task.querySelector(".timestamp");
 
+        /* COMPLETE button */
         completeBtn.addEventListener("click", () => {
             const now = new Date();
             const date = now.toLocaleDateString();
@@ -53,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             updateProgress();
         });
 
+        /* N/A button */
         naBtn.addEventListener("click", () => {
             const now = new Date();
             const date = now.toLocaleDateString();
@@ -70,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    /* RESET button */
     resetBtn.addEventListener("click", () => {
         tasks.forEach(task => {
             task.classList.remove("done", "na");
@@ -78,6 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
         updateProgress();
     });
 
+    /* Initialize progress on page load */
     updateProgress();
 });
-

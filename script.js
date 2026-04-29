@@ -23,16 +23,26 @@ document.addEventListener("DOMContentLoaded", () => {
         const timestamp = task.querySelector(".timestamp");
 
         completeBtn.addEventListener("click", () => {
-            task.classList.add("done");
-            task.classList.remove("na");
-            timestamp.textContent = "Completed at: " + new Date().toLocaleTimeString();
+            if (task.classList.contains("done")) {
+                task.classList.remove("done");
+                timestamp.textContent = "";
+            } else {
+                task.classList.add("done");
+                task.classList.remove("na");
+                timestamp.textContent = "Completed at: " + new Date().toLocaleTimeString();
+            }
             updateProgress();
         });
 
         naBtn.addEventListener("click", () => {
-            task.classList.add("na");
-            task.classList.remove("done");
-            timestamp.textContent = "Marked N/A at: " + new Date().toLocaleTimeString();
+            if (task.classList.contains("na")) {
+                task.classList.remove("na");
+                timestamp.textContent = "";
+            } else {
+                task.classList.add("na");
+                task.classList.remove("done");
+                timestamp.textContent = "Marked N/A at: " + new Date().toLocaleTimeString();
+            }
             updateProgress();
         });
     });

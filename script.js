@@ -6,6 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const circumference = 240;
 
+    /* Set today's date */
+    document.getElementById("today-date").textContent =
+        new Date().toLocaleDateString(undefined, {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        });
+
     function updateProgress() {
         let total = tasks.length;
         let done = 0;
@@ -29,25 +38,33 @@ document.addEventListener("DOMContentLoaded", () => {
         const timestamp = task.querySelector(".timestamp");
 
         completeBtn.addEventListener("click", () => {
+            const now = new Date();
+            const date = now.toLocaleDateString();
+            const time = now.toLocaleTimeString();
+
             if (task.classList.contains("done")) {
                 task.classList.remove("done");
                 timestamp.textContent = "";
             } else {
                 task.classList.add("done");
                 task.classList.remove("na");
-                timestamp.textContent = "Completed at: " + new Date().toLocaleTimeString();
+                timestamp.textContent = `Completed on ${date} at ${time}`;
             }
             updateProgress();
         });
 
         naBtn.addEventListener("click", () => {
+            const now = new Date();
+            const date = now.toLocaleDateString();
+            const time = now.toLocaleTimeString();
+
             if (task.classList.contains("na")) {
                 task.classList.remove("na");
                 timestamp.textContent = "";
             } else {
                 task.classList.add("na");
                 task.classList.remove("done");
-                timestamp.textContent = "Marked N/A at: " + new Date().toLocaleTimeString();
+                timestamp.textContent = `Marked N/A on ${date} at ${time}`;
             }
             updateProgress();
         });
@@ -63,3 +80,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateProgress();
 });
+

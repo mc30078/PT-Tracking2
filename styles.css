@@ -1,65 +1,115 @@
+/* Global */
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background: #f7f9fc;
     margin: 0;
-    padding: 20px;
+    padding: 25px;
+    color: #333;
 }
 
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 25px;
 }
 
-.progress-circle {
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Progress Circle */
+.progress-wrapper {
+    position: relative;
     width: 90px;
     height: 90px;
-    border-radius: 50%;
-    border: 6px solid #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
-    font-weight: bold;
-    background: white;
 }
 
-.task-list {
-    margin-top: 20px;
+.progress-ring-bg {
+    fill: none;
+    stroke: #e0e6ed;
+    stroke-width: 8;
 }
 
+.progress-ring-fill {
+    fill: none;
+    stroke: #0078d4;
+    stroke-width: 8;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    stroke-dasharray: 240;
+    stroke-dashoffset: 240;
+    transition: stroke-dashoffset 0.4s ease;
+}
+
+#progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Task Cards */
 .task-card {
     background: white;
-    padding: 15px;
-    margin-bottom: 12px;
-    border-radius: 6px;
+    padding: 18px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: transform 0.15s ease;
 }
 
-/* Color-coded left borders */
-.task-email { border-left: 8px solid #0078d4; }      /* Blue */
-.task-wayfair { border-left: 8px solid #8a2be2; }    /* Purple */
-.task-magnus { border-left: 8px solid #ff8c00; }     /* Orange */
-.task-unbeatable { border-left: 8px solid #28a745; } /* Green */
-.task-plumbtech { border-left: 8px solid #20b2aa; }  /* Teal */
-.task-pickpack { border-left: 8px solid #dc3545; }   /* Red */
-.task-returns { border-left: 8px solid #ffc107; }    /* Yellow */
-.task-report { border-left: 8px solid #6c757d; }     /* Gray */
+.task-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Color-coded borders */
+.task-email { border-left: 6px solid #0078d4; }
+.task-wayfair { border-left: 6px solid #8a2be2; }
+.task-magnus { border-left: 6px solid #ff8c00; }
+.task-unbeatable { border-left: 6px solid #28a745; }
+.task-plumbtech { border-left: 6px solid #20b2aa; }
+.task-pickpack { border-left: 6px solid #dc3545; }
+.task-returns { border-left: 6px solid #ffc107; }
+.task-report { border-left: 6px solid #6c757d; }
+
+/* Buttons */
+.button-row {
+    margin-top: 10px;
+}
+
+.complete-btn,
+.na-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
 
 .complete-btn {
     background: #28a745;
     color: white;
-    padding: 8px 12px;
-    border: none;
-    margin-right: 10px;
-    cursor: pointer;
+}
+
+.complete-btn:hover {
+    background: #218838;
 }
 
 .na-btn {
     background: #6c757d;
     color: white;
-    padding: 8px 12px;
-    border: none;
-    cursor: pointer;
+}
+
+.na-btn:hover {
+    background: #5a6268;
 }
 
 .timestamp {
@@ -68,12 +118,19 @@ body {
     color: #555;
 }
 
+/* Reset Button */
 #reset-btn {
-    margin-top: 20px;
+    margin-top: 25px;
     padding: 12px 20px;
     background: #d9534f;
     color: white;
     border: none;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
+    transition: background 0.2s ease;
+}
+
+#reset-btn:hover {
+    background: #c9302c;
 }

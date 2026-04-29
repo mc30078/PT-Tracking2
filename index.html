@@ -9,7 +9,11 @@
 
 <div class="header">
     <h1>Daily Warehouse Checklist</h1>
-    <div class="progress-circle">
+    <div class="progress-wrapper">
+        <svg class="progress-ring" width="90" height="90">
+            <circle class="progress-ring-bg" cx="45" cy="45" r="38" />
+            <circle class="progress-ring-fill" cx="45" cy="45" r="38" />
+        </svg>
         <span id="progress-text">0%</span>
     </div>
 </div>
@@ -18,42 +22,81 @@
 
     <div class="task-card task-email" data-task="Review Email">
         <h3>Review Email</h3>
-        <button class="complete-btn">Complete</button>
-        <button class="na-btn">N/A</button>
+        <div class="button-row">
+            <button class="complete-btn">Complete</button>
+            <button class="na-btn">N/A</button>
+        </div>
         <div class="timestamp"></div>
     </div>
 
     <div class="task-card task-wayfair" data-task="Prepare Wayfair Orders">
         <h3>Prepare Wayfair Orders</h3>
-        <button class="complete-btn">Complete</button>
-        <button class="na-btn">N/A</button>
+        <div class="button-row">
+            <button class="complete-btn">Complete</button>
+            <button class="na-btn">N/A</button>
+        </div>
         <div class="timestamp"></div>
     </div>
 
     <div class="task-card task-magnus" data-task="Prepare Magnus Orders">
         <h3>Prepare Magnus Orders</h3>
-        <button class="complete-btn">Complete</button>
-        <button class="na-btn">N/A</button>
+        <div class="button-row">
+            <button class="complete-btn">Complete</button>
+            <button class="na-btn">N/A</button>
+        </div>
         <div class="timestamp"></div>
     </div>
 
     <div class="task-card task-unbeatable" data-task="Prepare Unbeatable Orders">
         <h3>Prepare Unbeatable Orders</h3>
-        <button class="complete-btn">Complete</button>
-        <button class="na-btn">N/A</button>
+        <div class="button-row">
+            <button class="complete-btn">Complete</button>
+            <button class="na-btn">N/A</button>
+        </div>
         <div class="timestamp"></div>
     </div>
 
     <div class="task-card task-plumbtech" data-task="Prepare Plumbtech Orders">
         <h3>Prepare Plumbtech Orders</h3>
-        <button class="complete-btn">Complete</button>
-        <button class="na-btn">N/A</button>
+        <div class="button-row">
+            <button class="complete-btn">Complete</button>
+            <button class="na-btn">N/A</button>
+        </div>
         <div class="timestamp"></div>
     </div>
 
     <div class="task-card task-pickpack" data-task="Pick/Pack/Ship All Orders">
         <h3>Pick/Pack/Ship All Orders</h3>
         <p class="subtext">Ship by 3:30 PM</p>
-        <button class="complete-btn">Complete</button>
-        <button class="na-btn">N/A</button>
-        <div class="timestamp">
+        <div class="button-row">
+            <button class="complete-btn">Complete</button>
+            <button class="na-btn">N/A</button>
+        </div>
+        <div class="timestamp"></div>
+    </div>
+
+    <div class="task-card task-returns" data-task="Process Returns">
+        <h3>Process Returns</h3>
+        <div class="button-row">
+            <button class="complete-btn">Complete</button>
+            <button class="na-btn">N/A</button>
+        </div>
+        <div class="timestamp"></div>
+    </div>
+
+    <div class="task-card task-report" data-task="Email Daily Shipping Report">
+        <h3>Email Daily Shipping Report</h3>
+        <div class="button-row">
+            <button class="complete-btn">Complete</button>
+            <button class="na-btn">N/A</button>
+        </div>
+        <div class="timestamp"></div>
+    </div>
+
+</div>
+
+<button id="reset-btn">Reset Checklist</button>
+
+<script src="script.js"></script>
+</body>
+</html>

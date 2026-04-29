@@ -32,13 +32,18 @@ body {
     background: white;
     padding: 15px;
     margin-bottom: 12px;
-    border-left: 8px solid #0078d4;
     border-radius: 6px;
 }
 
-.task-card h3 {
-    margin: 0 0 10px 0;
-}
+/* Color-coded left borders */
+.task-email { border-left: 8px solid #0078d4; }      /* Blue */
+.task-wayfair { border-left: 8px solid #8a2be2; }    /* Purple */
+.task-magnus { border-left: 8px solid #ff8c00; }     /* Orange */
+.task-unbeatable { border-left: 8px solid #28a745; } /* Green */
+.task-plumbtech { border-left: 8px solid #20b2aa; }  /* Teal */
+.task-pickpack { border-left: 8px solid #dc3545; }   /* Red */
+.task-returns { border-left: 8px solid #ffc107; }    /* Yellow */
+.task-report { border-left: 8px solid #6c757d; }     /* Gray */
 
 .complete-btn {
     background: #28a745;
